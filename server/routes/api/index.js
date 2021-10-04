@@ -116,7 +116,7 @@ const createNewSpreadSheet = async () => {
             resource: {
                 type: "user",
                 role: "owner",
-                emailAddress: "kenan.ozbelli@gmail.com",
+                emailAddress: `${process.env.CLIENTEMAIL}`,
             },
         })
         .then((response) => {
