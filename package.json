@@ -1,0 +1,20 @@
+{
+  "name": "googlesheetsform",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Kenan Ozbelli <kenan.ozbelli@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "morgan": "^1.10.0"
+  },
+  "engines": {
+    "node": ">=12"
+},
+  "scripts": {
+    "start:dev": "concurrently -n client,server \"yarn run client:dev\" \"yarn run server:dev\"",
+    "client:dev": "cd client && yarn start",
+    "server:dev": "cd server && yarn start:dev",
+    "start": "cd server && npm install && npm start"
+  }
+}
