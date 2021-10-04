@@ -1,6 +1,6 @@
 # Google Sheets API Form
 
-## a project for adding information orginizing information from a form to google drive/sheets using Google API. 
+## a project for adding information organizing information from a form to google drive/sheets using Google API. 
 
 ### Url to the Application - http://googlesheetsform-dev.us-east-1.elasticbeanstalk.com/
 
