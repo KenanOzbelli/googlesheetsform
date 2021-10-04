@@ -4,6 +4,7 @@ const Form = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [disabled, setDisabled] = useState('');
     const [statusMsg, setStatusMsg] = useState('');
     const [statusColor, setStatusColor] = useState('');
     const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +13,7 @@ const Form = () => {
         event.preventDefault();
         
         setIsLoading(true);
-
+        setDisabled('disabled')
         API.post(name, email, message)
         .then(response => {
             if(response){
@@ -28,9 +29,11 @@ const Form = () => {
             if(error.response){           
                 setStatusMsg(error.response.data);
                 setIsLoading(false);
+                setDisabled('');
             }else{
                 setStatusMsg("Internal Error");
                 setIsLoading(false);
+                setDisabled('');
             }
         })
     }
@@ -68,7 +71,7 @@ const Form = () => {
                 <label htmlFor="InputMessage" className="form-label">Message</label>
                 <textarea className="form-control" id="InputMessage" maxLength="250" name="message" value={message} onChange={handleChange} placeholder="Hello World" />
             </div>
-            <button type="submit" className="btn btn-secondary w-100">
+            <button type="submit" className={`btn ${disabled} btn-secondary w-100`}>
                 {isLoading? <span>Loading....</span>: <span>Submit</span>}</button>
         </form>
         {statusMsg !== ''? 

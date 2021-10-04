@@ -23,10 +23,6 @@ let SheetYear = async () => {
             spreadsheetObj = sheet;
         }
     });
-
-    if (!spreadsheetObj) {
-       await createNewSpreadSheet();
-    }
 };
 
 const authClientObject = auth.getClient();
@@ -221,10 +217,10 @@ router.get("/googlesheet", async (req, res) => {
 
     //Check to see if still in current Year if not get new Key for year.
     if (!spreadsheetObj || spreadsheetObj.id !== dateOBJ.getUTCFullYear()) {
-        await SheetYear();
-
+            await SheetYear();
+            
         if (!spreadsheetObj) {
-            return res.status(500).json("Contact Support at 111-111-1111");
+            return res.status(500).json(`Table does not exist for ${dateOBJ.getUTCMonth() + 1} - ${dateOBJ.getUTCFullYear()} Create an item on the form`);
         }
     }
     await googleSheetsInstance.spreadsheets.values
@@ -279,7 +275,7 @@ router.post("/googlesheetsend", async (req, res) => {
         await SheetYear();
 
         if (!spreadsheetObj) {
-            return res.status(500).json("Contact Support at 111-111-1111");
+            await createNewSpreadSheet();
         }
     }
     //create new sheet on the main spreadsheet
