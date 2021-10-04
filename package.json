@@ -10,7 +10,7 @@
   },
   "engines": {
     "node": ">=12"
-},
+  },
   "scripts": {
     "start:dev": "concurrently -n client,server \"yarn run client:dev\" \"yarn run server:dev\"",
     "client:dev": "cd client && yarn start",
