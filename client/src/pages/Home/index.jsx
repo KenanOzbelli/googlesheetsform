@@ -12,7 +12,7 @@ const home = () => {
                         </div>
                         <div className="body-card mb-5 text-muted ps-sm-2">
                             <p className="fs-5 lh-base">A demo that utilizes <strong>Google Sheet API</strong> and <strong>Google Drive API</strong>.
-                            Demonstrating adding information an organizing that information without the use of a database.
+                            Demonstrating adding information and organizing that information without the use of a database.
                             </p>
                             <Link to="/form">
                                 <button type="button" className="btn btn-outline-secondary btn-lg p-2">Try it Now !</button>

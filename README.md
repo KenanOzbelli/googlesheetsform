@@ -1,6 +1,6 @@
 # Google Sheets API Form
 
-### A Demo for to add information and organize that information using the google drive and google sheets API. 
+### A Demo to add information and organize that information using the google drive and google sheets API. 
 
 ### Url to the Application - http://googlesheetsform-dev.us-east-1.elasticbeanstalk.com/
 
