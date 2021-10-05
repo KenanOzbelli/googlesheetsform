@@ -217,10 +217,10 @@ router.get("/googlesheet", async (req, res) => {
 
     //Check to see if still in current Year if not get new Key for year.
     if (!spreadsheetObj || spreadsheetObj.id !== dateOBJ.getUTCFullYear()) {
-            await SheetYear();
+        await SheetYear();
             
         if (!spreadsheetObj) {
-            return res.status(500).json(`Table does not exist for ${dateOBJ.getUTCMonth() + 1} - ${dateOBJ.getUTCFullYear()} Create an item on the form`);
+            return res.status(500).json(`Table does not exist for ${dateOBJ.getUTCMonth() + 1} - ${dateOBJ.getUTCFullYear()}`);
         }
     }
     await googleSheetsInstance.spreadsheets.values

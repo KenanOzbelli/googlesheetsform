@@ -7,11 +7,12 @@ import { Route, Switch } from 'react-router-dom';
 import { Fragment } from 'react';
 
 function App() {
+  window.scrollBy(0, 1);
+
   return (
     <div className="App">
       <header className="header">
        <Navigation />
-       <div style={{marginTop:'7rem'}}></div>
       </header>
       <div className="pageOverlay"></div>
       <Fragment>

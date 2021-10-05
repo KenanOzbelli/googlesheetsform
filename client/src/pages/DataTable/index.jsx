@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SkeletonTable from "./skeletonTable";
 import InfoTable from "./infoTable";
+import { Link } from "react-router-dom";
 import SheetTab from "../../components/SheetTab";
 import API from "../../lib/API";
 import Skeleton from "react-loading-skeleton";
@@ -19,22 +20,18 @@ const DataTable = () => {
         if (mounted) {
             API.get()
                 .then((response) => {
-                    if (response || response.data.length > 1){
+                    if (response || response.data.length > 1) {
                         let sorted = response.data.sort((a, b) => a[0] < b[0] ? 1 : -1);
                         setData(sorted);
                         setSearchFilter(sorted)
                         setTableReady(true)
-                    }
-
-                    if(response.data.length ===1){
-                        return setErrMsg("Table is Empty...")
                     }
                 })
                 .catch((err) => {
                     if (err.response) {
                         setErrMsg(err.response.data);
                     } else {
-                        setErrMsg("Internal Error")
+                        setErrMsg("Internal Error");
                     }
                 });
             API.getSheets()
@@ -46,7 +43,6 @@ const DataTable = () => {
         }
         return () => mounted = false;
     }, []);
-
     const handleChange = (event) => {
         let value = event.target.value.toLowerCase();
 
@@ -268,7 +264,14 @@ const DataTable = () => {
                     <InfoTable data={data} />
                 }
             </div>
-            {errMsg !== "" ? <div className="text-center text-secondary"><h4>{errMsg}</h4></div> : null}
+            {errMsg !== "" ?
+                <div className="container">
+                    <div className="text-center p-3 shadow-sm">
+                        <h4 className="p-3">{errMsg}</h4>
+                        <Link to="/form"><button type="button" className="btn btn-secondary p-2">Back to Form</button></Link>
+                    </div>
+                </div>
+                : null}
         </>
     );
 };

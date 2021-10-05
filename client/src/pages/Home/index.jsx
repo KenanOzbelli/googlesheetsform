@@ -12,8 +12,7 @@ const home = () => {
                         </div>
                         <div className="body-card mb-5 text-muted ps-sm-2">
                             <p className="fs-5 lh-base">A demo that utilizes <strong>Google Sheet API</strong> and <strong>Google Drive API</strong>,
-                            to demonstrate adding information to a spreadsheet and adding that information to a table,
-                            without the need of a database and creating and organizing your files by date on your google drive to make the work load autonomus.
+                            to demonstrate adding information to google sheet without the use of a database. While organizing files using Google Drive API.
                             </p>
                             <Link to="/form">
                                 <button type="button" className="btn btn-outline-secondary btn-lg p-2">Try it Now !</button>
@@ -28,7 +27,7 @@ const home = () => {
                                 Form Utilization
                             </h3>
                             <p className="text-light">
-                                Addition of a Form to be able to Append Information a user sends to the SpreadSheet in Google Sheets.
+                                A form to be able to Append Information a user sends to a SpreadSheet in Google Sheets.
                             </p>
                             <Link to="/form">
                                 <button type="button" className="btn btn-primary p-2 border-light">Go to Form</button>

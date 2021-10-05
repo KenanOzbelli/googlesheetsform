@@ -33,7 +33,7 @@ const Navigation = () => {
     }
     
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light mb-5" style={{width:"100%", zIndex:"100"}}>
             <div className="container-fluid">
                 <Link className="navbar-brand text-success" to="/" onClick={HideMenu}>Google Sheets</Link>
                 <button className="navbar-toggler border-0" type="button" id="sidebarMenu" aria-label="Toggle navigation"
