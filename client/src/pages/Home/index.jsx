@@ -11,8 +11,8 @@ const home = () => {
                             <h1 className="text-muted fw-bold">Google Sheets API Demo</h1>
                         </div>
                         <div className="body-card mb-5 text-muted ps-sm-2">
-                            <p className="fs-5 lh-base">A demo that utilizes <strong>Google Sheet API</strong> and <strong>Google Drive API</strong>,
-                            to demonstrate adding information to google sheet without the use of a database. While organizing files using Google Drive API.
+                            <p className="fs-5 lh-base">A demo that utilizes <strong>Google Sheet API</strong> and <strong>Google Drive API</strong>.
+                            Demonstrating adding information an organizing that information without the use of a database.
                             </p>
                             <Link to="/form">
                                 <button type="button" className="btn btn-outline-secondary btn-lg p-2">Try it Now !</button>

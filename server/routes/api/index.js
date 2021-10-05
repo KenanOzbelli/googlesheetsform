@@ -117,7 +117,7 @@ const createNewSpreadSheet = async () => {
         })
         .then((response) => {
             console.log(response.data);
-        });
+        })
 
     await googleDriveInstance.files
         .get({
