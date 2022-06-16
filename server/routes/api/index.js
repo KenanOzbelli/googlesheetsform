@@ -12,6 +12,8 @@ const auth = new google.auth.GoogleAuth({
         "https://www.googleapis.com/auth/spreadsheets",
         "https://www.googleapis.com/auth/drive",
     ],
+    keyFile: `${process.env.GOOGLE_APPLICATION_CREDENTIALS}`
+    
 });
 
 //find right key for right year
@@ -100,7 +102,7 @@ const createNewSpreadSheet = async () => {
             },
         })
         .then((response) => {
-            console.log(response);
+            console.log(response.data);
         });
 
     await googleDriveInstance.permissions
@@ -108,11 +110,11 @@ const createNewSpreadSheet = async () => {
             auth,
             fileId: newSpreadSheetId,
             fields: "id",
-            transferOwnership: true,
             resource: {
                 type: "user",
-                role: "owner",
-                emailAddress: `${process.env.CLIENTEMAIL}`,
+                role: "writer",
+                pendingOwner:true,
+                emailAddress: `${process.env.CLIENTEMAIL}`
             },
         })
         .then((response) => {
@@ -123,7 +125,7 @@ const createNewSpreadSheet = async () => {
         .get({
             auth,
             fileId: newSpreadSheetId,
-            fields: "parents",
+            fields: "parents"
         })
         .then((response) => {
             oldParent = response.data.parents;

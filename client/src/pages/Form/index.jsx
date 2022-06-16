@@ -23,6 +23,7 @@ const Form = () => {
             setName('')
             setEmail('')
             setMessage('')
+            setDisabled('')
             }
         }).catch(error => {
             setStatusColor('danger'); 
